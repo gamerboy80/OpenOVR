@@ -2,8 +2,8 @@ version: 1.0.{build}
 image: Visual Studio 2022
 configuration: Release
 platform:
-  - Win32
   - x64
+  - Win32
 install:
   - cmd: >-
       git submodule update --init --recursive
@@ -35,12 +35,3 @@ on_success:
       7z rn OpenComposite.zip "RuntimeSwitcher/bin/$env:Configuration" "OpenComposite"
 
       Push-AppveyorArtifact "OpenComposite.zip"
-notifications:
-  - provider: Webhook
-    url: https://opencomposite.znix.xyz/builds/webhook/upload_build
-    on_build_success: true
-    on_build_failure: true
-    on_build_status_changed: false
-    headers:
-      X-BuildTrack-Auth:
-        secure: Oy+fUhSRCERHsIiOOOLNWCp94RJHpKn7djIn8x2qm/aouJg7GZEkNShPG7p7D1opokkKRumnH/+TjeasJ+LzLiHSgyxhSdwXaX5dMGMdkkk=
