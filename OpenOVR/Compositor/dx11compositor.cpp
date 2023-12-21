@@ -466,8 +466,8 @@ void DX11Compositor::Invoke(XruEye eye, const vr::Texture_t* texture, const vr::
 		vr::VRTextureBounds_t bounds = *ptrBounds;
 
 		if (bounds.vMin > bounds.vMax && !oovr_global_configuration.InvertUsingShaders()) {
-			std::swap(layer.fov.angleUp, layer.fov.angleDown);
-			std::swap(bounds.vMin, bounds.vMax);
+			// std::swap(layer.fov.angleUp, layer.fov.angleDown);
+			// std::swap(bounds.vMin, bounds.vMax);
 		}
 
 		viewport.offset.x = 0;
