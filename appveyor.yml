@@ -3,7 +3,7 @@ image: Visual Studio 2022
 configuration: Release
 platform:
   - x64
-  - Win32
+  # - Win32
 install:
   - cmd: >-
       git submodule update --init --recursive
